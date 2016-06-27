@@ -88,7 +88,8 @@ names(combined) <- gsub("-","",names(combined))
 names(combined) <- gsub("\\("," ",names(combined))
 names(combined) <- gsub("\\)","",names(combined))
 
-
+## write resulting tidy data set
+write.table(combined,"tidy1.txt",row.names=FALSE,col.names=TRUE,quote=FALSE)
 
 ## Coursera Objective #5:
 ## Create a second data set with the average of each variable for each activity and subject
