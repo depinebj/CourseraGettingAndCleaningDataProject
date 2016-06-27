@@ -23,7 +23,27 @@ transformation.
 The data obtained for this course project is from the
 Human Activity Recognition Using Smartphones Dataset project.  See credits section for links to this data.
 
- 
+Data Transformations:
+
+The R script begins with downloading and extracting the project data directory from the provided internet location for the Human Activity Recognition Using Smartphones Dataset.
+
+Once the file is unzipped, the data files are begun to be read into R.
+
+Participants were broken into two segments for this scientific project. They are labeled as Test and Train and are located in two separate directories. The X, y and subject files are read for both Test and Train into R. Next, there are two label files. The first is Activity and contains the Activity label for each of the six acitivities performed by participants. The second file is Features and contains the 561 observation points recorded for each participant and activity.
+
+After reading in the tables, I added column names from the Features table to The X_test and X_train tables. I then manually added labels of Activity to the table containing the six activities and a label of Participant to the table containing the thirty Subject number. I added these labels now to simplify the column labelling process when the tables are merged together, which is the next step.
+
+The next steps, which fulfills Coursera Objective #1, is to merge the Training and Test data sets together into one large dataset. With the raw data in X, the activities in y and the Participant numbers in Subject, I merged each of these by simply using an rbind and creating a new dataset for each with the Test data followed by Train data.
+
+The next step is to fulfill the Coursera #2 objective by narrowing the data to only mean and standard deviation observations. I created a new dataset that was limited to only those columns.
+
+Once the X_data was subset to just the mean and standard deviation columns, I column joined all three dataset together to create a dataset that has a column for the activity number, a column for the participant number followed by the scientific observations mean and standard deviation values.
+
+The next step was to fulfill the Coursera #3 objective of transforming the Activity number to the descriptive name. I used the label data set Activity to perform that transformation.
+
+The next step was to fulfill Coursera #4 objective of creating tidy column names. I created a series of label transformation steps to create the tidy human readable names by changing abbreviations into full names and adding spaces for better reading labels.
+
+The final Coursera objective, Coursera #5, was to create a dataset that contained mean summary data for each Activity and Participant. This was created and written to file tidy.txt as output from this R script. 
 
 Background on the Human Activity Recognition Using Smartphone
 Dataset: 
